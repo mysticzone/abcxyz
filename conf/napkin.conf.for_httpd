@@ -1,0 +1,26 @@
+Listen 8009
+<VirtualHost *:8009>
+    WSGIScriptAlias / /opt/napkin/napkin/app.wsgi
+    WSGIDaemonProcess napkin user=apache group=apache processes=2 threads=20
+    WSGIApplicationGroup %{GLOBAL}
+
+    Alias /css /opt/napkin/static/css
+    Alias /js /opt/napkin/static/js
+    Alias /img /opt/napkin/static/img
+    Alias /fonts /opt/napkin/static/fonts
+    Alias /static /opt/napkin/static
+
+    #<Directory />
+    #    Options FollowSymLinks
+    #    AllowOverride None
+    #</Directory>
+
+    <Directory /opt/napkin/napkin>
+      Order allow,deny
+      Allow from all
+    </Directory>
+
+    LogLevel info
+    ErrorLog /var/log/httpd/napkin_error.log
+    CustomLog /var/log/httpd/napkin_access.log combined
+</VirtualHost>

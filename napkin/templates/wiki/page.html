@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>{{ title }} - napkin</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="/favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="/static/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/plugins/prism/prism.css">
+    <link rel="stylesheet" href="/static/plugins/elegant_font/css/style.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="/static/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="/wiki/">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Napkin</span><span class="text-bold">wiki</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="/wiki/">首页</a></li>
+                    <li class="active"><a target="_blank" href="/wiki/post/">新建</a></li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+
+
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h6 class="doc-title"><i class="icon fa fa-paper-plane"></i> {{ title }}</h6>
+                    <div class="meta"><i class="fa fa-clock-o"></i> {{ updated_at }}   
+                      {% if locked %}
+                      <a class="btn btn-sm btn-red" href="#">Locked</a>
+                      {% else %}
+                      <a class="btn btn-sm btn-primary" href="/wiki/edit/{{ pgid }}">Edit</a>
+                      {% endif %}
+                    </div>
+                </div><!--//doc-header-->
+
+
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+
+                            <section id="code-section" class="doc-section">
+
+                            {{ txthtml | safe }}
+
+                            </section><!--//doc-section-->
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+
+
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <!--<ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#download-section">Download</a></li>
+                                <li>
+                                    <a class="scrollto" href="#installation-section">Installation</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#step1">Step One</a></li>
+                                        <li><a class="scrollto" href="#step2">Step Two</a></li>
+                                        <li><a class="scrollto" href="#step3">Step Three</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#code-section">Code</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#html">HTML</a></li>
+                                        <li><a class="scrollto" href="#css">CSS</a></li>
+                                        <li><a class="scrollto" href="#less">LESS</a></li>
+                                        <li><a class="scrollto" href="#sass">Sass</a></li>
+                                        <li><a class="scrollto" href="#javascript">JavaScript</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="scrollto" href="#callouts-section">Callouts</a></li>
+                                <li><a class="scrollto" href="#tables-section">Tables</a></li>
+                            </ul>-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <small class="copyright">C napkin team <i class="fa fa-heart"></i> by <a href="http://hihuron.com" targe="_blank">huron.com</a></small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="/static/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="/static/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="/static/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    
+</body>
+</html> 
+
